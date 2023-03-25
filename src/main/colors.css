@@ -1,0 +1,12 @@
+
+.red { --bg: 0,21%,32% }
+.orange { --bg: 20,21%,32% }
+.yellow { --bg: 90,21%,32% }
+.green { --bg: 120,21%,32% }
+.blue { --bg: 220,21%,32% }
+.pink { --bg: 300,21%,32% }
+.purple { --bg: 270, 21%, 32% }
+
+.workspaces .workspace {
+    color: #000a;
+}

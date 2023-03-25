@@ -1,0 +1,12 @@
+:root {
+  font-size: 20px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "roboto", sans-serif;
+  margin: 0;
+}

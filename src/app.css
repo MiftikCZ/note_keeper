@@ -1,0 +1,281 @@
+:root {
+    --bg: #272e33;
+    --header: #202020;
+    --todoBg: #202020aa;
+    --color: #eeee;
+    --hue: 270;
+    --overlay: hsl(var(--hue), 37%, 80%);
+}
+
+body {
+  background: var(--bg);
+  color: var(--color);
+}
+
+.workspaces {
+    justify-content: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0.25em;
+}
+
+.workspaces .workspace {
+    border: #222a 1px solid;
+    box-shadow: #0006 2px 2px 4px;
+    max-width: 10em;
+    width: 100%;
+    padding: 0.75em;
+    color: #000a;
+    background: hsla(var(--bg),90%);
+    border-radius: 0.5em;
+    transition: 250ms;
+    cursor: pointer;
+    transition: 200ms;
+}
+
+
+
+.workspaces .workspace .title {
+    min-height: 4em;
+    transition: 200ms;
+}
+
+.workspace .workspace .tools {
+    font-size: 0.9em;
+}
+
+
+.workspaces .workspace:hover {
+    background: hsla(var(--bg),100%);
+    box-shadow: #0003 5px 10px 10px;
+}
+.workspaces .workspace:hover .title {
+    color: #fffe;
+}
+
+.workspaces .workspace .tools .tool {
+    transition: 200ms;
+    border-radius: 0.25em;
+    padding: 0.25em;
+}
+
+.workspaces .workspace .tools .tool:hover {
+    background: cyan;
+    color: #222;
+}
+
+
+
+.add {
+    color: #000a;
+    border: none;
+    border: #0005 1px solid;
+    box-shadow: #0005 2px 4px 4px;
+    background: hsl(370,37%,48%);
+    cursor: pointer;
+    position: fixed;
+    bottom: 1rem;
+    font-size: 1.25em;
+    height: 2em;
+    aspect-ratio: 1 / 1;
+    text-align: center;
+    vertical-align: middle;
+    border-radius: 100%;
+    right: 1rem;
+    transition: 200ms;
+}
+
+
+
+.add:hover {
+    color: #eeeb;
+    background: hsl(370,37%,53%);
+    box-shadow: #0003 10px 20px 10px;
+}
+
+.app {
+    padding: 0 0.75rem;
+}
+
+.app .header {
+    padding: 0.5rem 0;
+    color: #eeeb;
+    font-size: 1.5em;
+}
+
+.showWorkspace .header {
+    background: var(--header);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.showWorkspace .header .title {
+    background: transparent;
+    border: hidden;
+    width: 100%;
+    padding: 0.5em;
+    font-size: 1.2em;
+    color: #ccce;
+}
+
+.icon {
+    vertical-align: middle;
+}
+
+
+.showWorkspace .header .title:focus-within {
+    outline: none;
+}
+
+
+.showWorkspace .header .return {
+    cursor: pointer;
+    padding: 0 0.5em;
+    border: none;
+    background: var(--bg);
+    background: var(--color);
+    font-size: 1.25em;
+    flex-shrink: 0;
+    width: 1em;
+    width: fit-content;
+}
+
+.todos {
+    padding: 0 0.75em;
+    margin: 1.5em 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+    justify-content: start;
+    align-items: center;
+}
+
+.todos .todo {
+    overflow: hidden;
+    border-radius: 0.5em 0.5em 0 0;
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    max-width: 700px;
+    background: var(--todoBg);
+    justify-content: space-between;
+}
+
+.todos .todo .body {
+    padding: 0.75em;
+    width: 100%;
+}
+
+.todos .todo .remove {
+    padding: 0.5em;
+    cursor: pointer;
+    flex-shrink: 0;
+    border: none;
+    background: hsl(0,37%,48%,0%);
+    transition: 200ms;
+}
+
+.todos .todo .remove:hover {
+    background: hsl(0,37%,40%,70%);  
+}
+
+.todos .todo .remove:hover .icon {
+    color: hsl(0,50%,52%);
+}
+
+
+.todos .todo .remove .icon {
+    color: #eee9;
+}
+
+.popup {
+    flex-wrap: wrap;
+    padding: 0.5em;
+    display: flex;
+    gap: 0.2em;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    border-radius: 0.25em;
+    transform: translate(-50%,-50%);
+    background: var(--overlay);
+    
+}
+
+.popup .content {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    flex-direction: row;
+    gap: 0.25em;
+    flex-shrink: 0;
+    padding: 0.25em;
+}
+
+.popup .input {
+    border: none;
+    padding: 0.25em;
+    font-size: 0.9em;
+    border-bottom: hsl(var(--hue),37%,48%) 3px solid;
+    background: transparent;
+    width: 100%;
+    transition: 200ms;
+}
+
+.popup .input:focus-within {
+    outline: none;
+}
+
+
+.popup .input:focus {
+    border-bottom-color: hsl(var(--hue),37%,48%);
+}
+
+.popup .content .button {
+    padding: 0.25em 0.5em;
+    font-size: 0.9em;
+    border: none;
+    border-radius: 0.25em;
+    cursor: pointer;
+}
+
+.popup .content ._add {
+    background: hsl(var(--hue),37%,48%);
+    color: #eee;
+    transition: 200ms;
+}
+
+.popup .content .close {
+    background: transparent;
+    border: hsl(var(--hue),37%,48%) 2px solid;
+    color: hsl(var(--hue),37%,48%);
+    transition: 200ms;
+}
+
+
+
+.popup .content .close:hover {
+
+    border: hsl(var(--hue),37%,40%) 2px solid;
+    color: hsl(var(--hue),37%,40%);
+}
+
+.popup .content ._add:hover {
+    background: hsl(var(--hue),37%,40%);
+}
+
+.goback {
+    cursor: pointer;
+    border-radius: 0.25em;
+    border: none;
+    background: hsl(220,37%,48%);
+    padding: 0.25em;
+    font-size: 0.9em;
+    margin-left: 0.5em;
+}
