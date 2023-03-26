@@ -8,9 +8,9 @@ import AddWorkspace from './main/components/AddWorkspace'
 import Workspace from './workspace/components/Workspace'
 
 export function App() {
-  /* [ 
-    {todos: [TODO, TODO], title: ""} , 
-    {todos: [TODO, TODO], title: ""} 
+  /* [
+    {todos: [TODO, TODO], title: ""} ,
+    {todos: [TODO, TODO], title: ""}
   ] */
   let todos_db = JSON.parse(localStorage.getItem("nk_todos") || "[]") || []
   if (!todos_db) {

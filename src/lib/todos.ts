@@ -5,13 +5,13 @@ export interface todoWorkspaceInterface {
     id: string,
     date: number
   }
-  
+
   export interface todoInterface {
     content: string,
     id: string,
-    date: number, 
+    date: number,
   }
-  
+
 
   export function getDefaultWorkspaceTitle() {
     let d = new Date()
