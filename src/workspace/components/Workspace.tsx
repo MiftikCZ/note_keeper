@@ -11,7 +11,7 @@ interface mainInterface {
 
 export default function ({ setTodos, todos, id,setShowWorkspaces }: mainInterface) {
     let workspace = todos.find(e => e.id == id)!
-    let defaultTitle = getDefaultWorkspaceTitle()
+    let defaultTitle = getDefaultWorkspaceTitle(workspace.date)
     return <div class="showWorkspace">
         {workspace ? <>
             <div class="header">

@@ -9,7 +9,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@fontsource/roboto": "^4.5.8",
+    "@fontsource/fira-sans": "^4.5.10",
     "preact": "^10.13.0"
   },
   "devDependencies": {

@@ -1,6 +1,8 @@
 import { render } from 'preact'
 import { App } from './app'
 import './index.css'
-import "@fontsource/roboto"
+import "@fontsource/fira-sans"
+// import { wallpaperList } from './lib/todos'
 
-render(<App />, document.getElementById('app') as HTMLElement)
+// const rnWallpaper = wallpaperList[Math.floor(Math.random() * wallpaperList.length)]
+render(<App/>, document.getElementById('app') as HTMLElement)

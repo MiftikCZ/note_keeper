@@ -1,34 +1,64 @@
 :root {
-    --bg: #272e33;
+    /* --bg: #272e2a; */
+    --bg: #272830;
+    --left-bar-bg: #1118;
     --header: #202020;
     --todoBg: #202020aa;
+    --bg-link: var(--bg);
     --color: #eeee;
-    --hue: 270;
+    --hue: 120;
     --overlay: hsl(var(--hue), 37%, 80%);
 }
 
 body {
-  background: var(--bg);
-  color: var(--color);
+    /* background-color: var(--bg);
+    background: var(--bg-link) fixed center center no-repeat;
+    background-color: #001e;
+    background-blend-mode: multiply;
+    background-size: cover; */
+    background: var(--bg);
+    color: var(--color);
 }
 
-.workspaces {
-    justify-content: center;
+.clocks {
+    color: #eee8;
+}
+
+
+.allWorkspaces {
+    padding: 0.5em 1em;
+    position: relative;
+    width: fit-content;
     display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: auto;
+    justify-content: start;
+    background: var(--left-bar-bg);
+}
+
+
+
+
+.workspaces {
+    height: 100%;
+    justify-content: center;
+    display: block;
     flex-direction: row;
     flex-wrap: wrap;
-    gap: 0.25em;
 }
 
 .workspaces .workspace {
-    border: #222a 1px solid;
-    box-shadow: #0006 2px 2px 4px;
-    max-width: 10em;
+    border-radius: 0 0.5em 0.5em 0px;
+    margin-bottom: 0.25em;
+    max-width: 16em;
     width: 100%;
-    padding: 0.75em;
-    color: #000a;
-    background: hsla(var(--bg),90%);
-    border-radius: 0.5em;
+    color: rgba(238, 238, 238, 0.667) !important;
+    background: hsla(var(--bg), 10%);
+    display: flex;
+    flex-direction: row;
     transition: 250ms;
     cursor: pointer;
     transition: 200ms;
@@ -37,20 +67,23 @@ body {
 
 
 .workspaces .workspace .title {
-    min-height: 4em;
+    border-radius: 0 0.5em 0.5em 0px;
+    width: 100%;
+    padding: 0.75em;
+    border-left: hsla(var(--bg), 90%) 4px solid;
     transition: 200ms;
 }
 
 .workspace .workspace .tools {
+    user-select: none;
     font-size: 0.9em;
 }
 
 
-.workspaces .workspace:hover {
-    background: hsla(var(--bg),100%);
-    box-shadow: #0003 5px 10px 10px;
-}
-.workspaces .workspace:hover .title {
+
+.workspaces .workspace .title:hover {
+    background: hsla(var(--bg), 100%);
+    border-radius: 0.5em;
     color: #fffe;
 }
 
@@ -61,18 +94,57 @@ body {
 }
 
 .workspaces .workspace .tools .tool:hover {
-    background: cyan;
-    color: #222;
+    background: hsla(var(--bg), 100%);
+    color: #fffe;
+}
+
+@media (max-width: 600px) {
+
+    .allWorkspaces {
+        width: 100%;
+        overflow: auto;
+        justify-content: center;
+    }
+
+    .workspaces .workspace {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+@media (min-width: 600px) {
+
+    .workspaces .workspace {
+        min-width: 14em;
+    }
+
 }
 
 
+.add_workspace {
+    cursor: pointer;
+    border: hidden;
+    border-radius: 0.5em;
+    padding: 0.5em;
+    background: #0000;
+    border: hsl(270, 40%, 45%, 95%) 2px solid;
+    color: hsl(270, 50%, 60%, 95%);
+    font-size: 1em;
+    transition: 200ms;
+}
+
+.add_workspace:hover {
+    transform: translateY(-0.2em);
+    background: hsl(270, 40%, 50%, 95%);
+    color: #fffe;
+}
 
 .add {
     color: #000a;
     border: none;
     border: #0005 1px solid;
     box-shadow: #0005 2px 4px 4px;
-    background: hsl(370,37%,48%);
+    background: hsl(370, 37%, 48%);
     cursor: pointer;
     position: fixed;
     bottom: 1rem;
@@ -90,18 +162,22 @@ body {
 
 .add:hover {
     color: #eeeb;
-    background: hsl(370,37%,53%);
+    background: hsl(370, 37%, 53%);
     box-shadow: #0003 10px 20px 10px;
 }
 
-.app {
+/* .app {
     padding: 0 0.75rem;
-}
+} */
 
 .app .header {
     padding: 0.5rem 0;
     color: #eeeb;
     font-size: 1.5em;
+}
+
+.showWorkspace {
+    transition: 250ms;
 }
 
 .showWorkspace .header {
@@ -121,6 +197,11 @@ body {
 }
 
 .icon {
+    user-select: none;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     vertical-align: middle;
 }
 
@@ -174,16 +255,16 @@ body {
     cursor: pointer;
     flex-shrink: 0;
     border: none;
-    background: hsl(0,37%,48%,0%);
+    background: hsl(0, 37%, 48%, 0%);
     transition: 200ms;
 }
 
 .todos .todo .remove:hover {
-    background: hsl(0,37%,40%,70%);  
+    background: hsl(0, 37%, 40%, 70%);
 }
 
 .todos .todo .remove:hover .icon {
-    color: hsl(0,50%,52%);
+    color: hsl(0, 50%, 52%);
 }
 
 
@@ -192,40 +273,41 @@ body {
 }
 
 .popup {
-    flex-wrap: wrap;
-    padding: 0.5em;
     display: flex;
-    gap: 0.2em;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    max-width: 500px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
     width: 100%;
-    margin: auto;
-    border-radius: 0.25em;
-    transform: translate(-50%,-50%);
-    background: var(--overlay);
-    
+    gap: 0.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #222e;
+    height: 100%;
+    width: 100%;
 }
 
 .popup .content {
     width: 100%;
     display: flex;
-    justify-content: start;
+    gap: 1em;
     flex-direction: row;
-    gap: 0.25em;
-    flex-shrink: 0;
-    padding: 0.25em;
+    justify-content: center;
 }
 
 .popup .input {
+    text-align: center;
+    font-weight: bold;
+    font-family: "Dosis", sans-serif;
+    color: hsl(120, 58%, 70%);
     border: none;
     padding: 0.25em;
-    font-size: 0.9em;
-    border-bottom: hsl(var(--hue),37%,48%) 3px solid;
+    font-size: 1.75em;
     background: transparent;
     width: 100%;
+    text-align: center;
     transition: 200ms;
+    border-radius: 0.25em;
 }
 
 .popup .input:focus-within {
@@ -234,47 +316,36 @@ body {
 
 
 .popup .input:focus {
-    border-bottom-color: hsl(var(--hue),37%,48%);
+    background: #eee1;
 }
 
 .popup .content .button {
-    padding: 0.25em 0.5em;
+    padding: 0.4em 0.5em;
     font-size: 0.9em;
     border: none;
     border-radius: 0.25em;
     cursor: pointer;
-}
-
-.popup .content ._add {
-    background: hsl(var(--hue),37%,48%);
-    color: #eee;
-    transition: 200ms;
-}
-
-.popup .content .close {
+    color: #eeea;
     background: transparent;
-    border: hsl(var(--hue),37%,48%) 2px solid;
-    color: hsl(var(--hue),37%,48%);
     transition: 200ms;
+    width: 100%;
+    max-width: 10em;
 }
 
-
-
-.popup .content .close:hover {
-
-    border: hsl(var(--hue),37%,40%) 2px solid;
-    color: hsl(var(--hue),37%,40%);
+.relative {
+    position: relative;
 }
 
-.popup .content ._add:hover {
-    background: hsl(var(--hue),37%,40%);
+.popup .content .button:hover {
+    background: hsl(var(--hue), 37%, 40%);
+    background: #eee1;
 }
 
 .goback {
     cursor: pointer;
     border-radius: 0.25em;
     border: none;
-    background: hsl(220,37%,48%);
+    background: hsl(220, 37%, 48%);
     padding: 0.25em;
     font-size: 0.9em;
     margin-left: 0.5em;

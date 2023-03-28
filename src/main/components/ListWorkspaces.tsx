@@ -16,13 +16,13 @@ export default function({todos,setTodos,setShowWorkspaces}:mainInterface) {
                 ..._workspace,
                 color: (()=>{
                   switch(workspace.color) {
-                    case "red":    return "orange";break; 
-                    case "orange": return "yellow";break;
-                    case "yellow": return "green" ;break;
-                    case "green":  return "blue"  ;break;
-                    case "blue":   return "pink"  ;break;
-                    case "pink":   return "purple";break;
-                    default:       return "red"   ;break;
+                    case "red":    return "orange";
+                    case "orange": return "yellow";
+                    case "yellow": return "green" ;
+                    case "green":  return "blue"  ;
+                    case "blue":   return "pink"  ;
+                    case "pink":   return "purple";
+                    default:       return "red"   ;
                   }
                 })()
               }
@@ -31,14 +31,14 @@ export default function({todos,setTodos,setShowWorkspaces}:mainInterface) {
           }))
         }
 
-        return <div onClick={()=>{
-            setShowWorkspaces(workspace.id)
-        }} class={(workspace?.color || "orange") + " workspace"}  >
-          <div class="title">{workspace?.title}</div>
+        return <div class={(workspace?.color || "orange") + " workspace"}  >
+        <div class="title" onClick={()=>{
+          setShowWorkspaces(workspace.id)
+      }} >{workspace?.title}</div>
           <div class="tools">
-            <span class="tool changeColor" onClick={()=>{
+            <span class="tool changeColor material-symbols-outlined icon" onClick={()=>{
               changeColor()
-            }}>color</span>
+            }}>colorize</span>
           </div>
         </div>
       })}

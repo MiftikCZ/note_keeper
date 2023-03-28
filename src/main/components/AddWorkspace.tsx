@@ -6,11 +6,12 @@ interface mainInterface {
 }
 
 export default function({setTodos,todos}:mainInterface) {
-    return <button class="add" onClick={()=>{
+  let date = Date.now()
+    return <button class="add_workspace" onClick={()=>{
         let d = new Date()
         setTodos([...todos, {
-          title: getDefaultWorkspaceTitle(),
-          date: Date.now(),
+          title: getDefaultWorkspaceTitle(date),
+          date: date,
           id: Date.now().toLocaleString(),
           color:"yellow",
           todos: [
@@ -21,5 +22,5 @@ export default function({setTodos,todos}:mainInterface) {
             }
           ]
         }])
-      }}>+</button>
+      }}>Add new</button>
 }
