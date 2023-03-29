@@ -11,11 +11,7 @@ export function App() {
   const date = new Date()
   const date_time = `${date.getDate()}.${date.getMonth()}`
   let todos_db = JSON.parse(localStorage.getItem("nk_todos") || "[]") || []
-  if (!todos_db) {
-    todos_db = [
-
-    ]
-  }
+  if (!todos_db) { todos_db = [] }
   
   const [showWorkspace, setShowWorkspace] = useState<string | null>("")
   const [todos, setTodos] = useState<Array<todoWorkspaceInterface>>(todos_db)

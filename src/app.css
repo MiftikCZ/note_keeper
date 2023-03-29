@@ -39,9 +39,6 @@ body {
     background: var(--left-bar-bg);
 }
 
-
-
-
 .workspaces {
     height: 100%;
     justify-content: center;
@@ -64,8 +61,6 @@ body {
     transition: 200ms;
 }
 
-
-
 .workspaces .workspace .title {
     border-radius: 0 0.5em 0.5em 0px;
     width: 100%;
@@ -78,8 +73,6 @@ body {
     user-select: none;
     font-size: 0.9em;
 }
-
-
 
 .workspaces .workspace .title:hover {
     background: hsla(var(--bg), 100%);
@@ -99,7 +92,6 @@ body {
 }
 
 @media (max-width: 600px) {
-
     .allWorkspaces {
         width: 100%;
         overflow: auto;
@@ -113,11 +105,9 @@ body {
 }
 
 @media (min-width: 600px) {
-
     .workspaces .workspace {
         min-width: 14em;
     }
-
 }
 
 
@@ -158,17 +148,11 @@ body {
     transition: 200ms;
 }
 
-
-
 .add:hover {
     color: #eeeb;
     background: hsl(370, 37%, 53%);
     box-shadow: #0003 10px 20px 10px;
 }
-
-/* .app {
-    padding: 0 0.75rem;
-} */
 
 .app .header {
     padding: 0.5rem 0;
