@@ -9,6 +9,7 @@
 - grouping system - easily organize yours notes
 - the simpliest way to just save notes of today
 - no database reseting
+- know which notes you have taken yesterday, today and easily organize them
 - change the colors of each group
 - - *it means the default title when making group is the date of today*
 
