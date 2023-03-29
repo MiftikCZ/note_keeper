@@ -8,6 +8,7 @@
     --color: #eeee;
     --hue: 120;
     --overlay: hsl(var(--hue), 37%, 80%);
+    --todo-width: 700px;
 }
 
 body {
@@ -224,9 +225,25 @@ body {
     display: flex;
     flex-direction: row;
     width: 100%;
-    max-width: 700px;
+    max-width: var(--todo-width);
     background: var(--todoBg);
     justify-content: space-between;
+}
+
+.todos .divider {
+    padding: 0.25em;
+    width: 100%;
+    text-align: center;
+    max-width: var(--todo-width);
+    background: #1113;
+    border-radius: 0.5em;
+    color: #eee8;
+}
+
+.todos .today {
+    background: #0004;
+    font-weight: bold;
+    color: hsl(270,52%,80%);
 }
 
 .todos .todo .body {

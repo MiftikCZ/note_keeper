@@ -9,7 +9,7 @@ import Workspace from './workspace/components/Workspace'
 
 export function App() {
   const date = new Date()
-  const date_time = `${date.getDate()}.${date.getMonth()}`
+  const date_time = `${date.getDate()}.${date.getMonth()+1}`
   let todos_db = JSON.parse(localStorage.getItem("nk_todos") || "[]") || []
   if (!todos_db) { todos_db = [] }
   

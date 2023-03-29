@@ -16,7 +16,7 @@ export default function({setTodos,todos}:mainInterface) {
           color:"yellow",
           todos: [
             {
-              content: `hello world ${d.getDate()}.${d.getMonth()}.${d.getFullYear()} !`,
+              content: `hello world ${d.getDate()}.${d.getMonth()+1}.${d.getFullYear()} !`,
               date: Date.now(),
               id: Date.now().toLocaleString()
             }

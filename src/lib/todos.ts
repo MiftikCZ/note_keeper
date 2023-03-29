@@ -15,7 +15,7 @@ export interface todoWorkspaceInterface {
 
   export function getDefaultWorkspaceTitle(date:string|number) {
     let d = new Date(parseInt(`${date}`))
-    return `${d.getDate()}-${d.getMonth()} ${d.getHours()}:${d.getMinutes()}`
+    return `${d.getDate()}-${d.getMonth()+1} ${d.getHours()}:${d.getMinutes()}`
   }
 
   // UNSPLASH
