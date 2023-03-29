@@ -1,5 +1,6 @@
-# Note keeper `1.1.0`
+# Note keeper `1.1.1`
 - *very simple note keeping apps with groups*
+- made for those who need it clean when working with lot of new ideas!
 
 ![demo image](demo.png)
 
