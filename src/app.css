@@ -37,13 +37,15 @@ body {
     max-height: 100vh;
     overflow: auto;
     justify-content: start;
+    overflow: hidden;
     background: var(--left-bar-bg);
 }
 
 .workspaces {
+    overflow: auto;
     height: 100%;
     justify-content: center;
-    display: block;
+    display: inlineblock;
     flex-direction: row;
     flex-wrap: wrap;
 }
