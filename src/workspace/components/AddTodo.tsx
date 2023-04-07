@@ -57,7 +57,7 @@ function addTodo({ setTodos, todos, workspace }: mainInterface, content: string)
                     {
                         content: content,
                         date: id,
-                        id: id.toLocaleString()
+                        id: id.toString(36)
                     }
                 ]
             }
