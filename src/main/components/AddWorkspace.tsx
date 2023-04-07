@@ -34,9 +34,14 @@ function workspaceTypes():workspaceTypesInterface {
       addClass: "defOption"
     },
     "tommorowTodos" : {
-      color: "blue",
+      color: "purple",
       title: `${dateNow.getDate()+1}-${dateNow.getMonth()+1} Todos`,
       label: "Tommorow todos"
+    },
+    "todaySchedule": {
+      color: "red",
+      label: "Day schedule",
+      title: `${dateNow.getDate()}.${dateNow.getMonth()} Program`
     },
     "todayTodos" : {
       color: "purple",
@@ -50,8 +55,13 @@ function workspaceTypes():workspaceTypesInterface {
     },
     "productivityLog" : {
       color: "green",
-      title: `${dateNow.getDate()}-${dateNow.getMonth()+1}`,
+      title: `Done on ${dateNow.getDate()}-${dateNow.getMonth()+1}`,
       label: "What happened today"
+    },
+    "coolIdeas": {
+      color: "blue",
+      title: "Cool ideas",
+      label: "Cool ideas"
     }
   }
 }
@@ -112,7 +122,7 @@ export default function({setTodos,todos}:mainInterface) {
         <div class="addWorkspaceMenu">
           <div class="content">
             <button class="close material-symbols-outlined" onClick={()=>{setShowWorkspace(false)}}>close</button>
-            <span class="title">New workspace</span>
+            <span class="title">Choose preset</span>
             <div className="buttons">
               {Object.values(myWorkspaceTypes).map(theType => {
                 return <>
