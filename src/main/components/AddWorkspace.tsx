@@ -1,19 +1,9 @@
 import { useState } from "preact/hooks"
 import { getDefaultWorkspaceTitle, todoInterface, todoWorkspaceInterface } from "../../lib/todos"
 
-type ArrayToUnion<T extends string[]> = T[number] extends infer U ? U extends keyof any ? U : never : never
-
 interface mainInterface {
     setTodos: Function | any,
     todos: todoWorkspaceInterface[]
-}
-
-interface newWorkspaceOptionsInterface {
-  color: todoWorkspaceInterface["color"],
-  setColor: Function | any,
-
-  title: string,
-  setTitle: Function | any
 }
 
 interface workspaceTypesInterface {
@@ -41,7 +31,7 @@ function workspaceTypes():workspaceTypesInterface {
     "todaySchedule": {
       color: "red",
       label: "Day schedule",
-      title: `${dateNow.getDate()}.${dateNow.getMonth()} Program`
+      title: `${dateNow.getDate()}-${dateNow.getMonth()+1} Program`
     },
     "todayTodos" : {
       color: "purple",
@@ -55,7 +45,7 @@ function workspaceTypes():workspaceTypesInterface {
     },
     "productivityLog" : {
       color: "green",
-      title: `Done on ${dateNow.getDate()}-${dateNow.getMonth()+1}`,
+      title: `Did on ${dateNow.getDate()}-${dateNow.getMonth()+1}`,
       label: "What happened today"
     },
     "coolIdeas": {
@@ -129,7 +119,6 @@ export default function({setTodos,todos}:mainInterface) {
                   <SelectionButton addClass={theType.addClass} label={theType.label} title={theType.title} color={theType.color}/>
                 </>
               })}
-              
             </div>
           </div>
         </div>
