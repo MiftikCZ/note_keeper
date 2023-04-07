@@ -113,6 +113,87 @@ body {
     }
 }
 
+.addWorkspaceMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #2224;
+    height: 100%;
+    width: 100%;
+}
+
+.addWorkspaceMenu .content {
+    border-radius: 0.5em;
+    overflow: hidden;
+    width: 100%;
+    position: relative;
+    max-width: 600px;
+    border: #eee4 1px solid;
+    box-shadow: #111 0px 0px 6px;
+    background: #222e;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.addWorkspaceMenu .content .title {
+    font-size: 1.25em;
+    padding: 0.5em;
+}
+
+.addWorkspaceMenu .content .buttons { 
+    position: relative;
+    display: grid;
+    cursor: pointer;
+    grid-template-columns: 1fr 1fr;
+    padding: 0.5em;
+    padding-top: 0;
+    gap: 0.15em;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+}
+
+.addWorkspaceMenu .content .buttons .button {
+    border: none;
+    border-radius: 0.25em;
+    background: #eeee;
+    color: #222e;
+    cursor: pointer;
+    padding: 0.5em 0.25em;
+    font-size: 0.9em;   
+}
+
+.addWorkspaceMenu .content .buttons .defOption {
+    /* background: hsl(220, 37%, 70%); */
+    /* color: #222; */
+    grid-column: 1 / 3;
+}
+
+.addWorkspaceMenu .content .buttons .button:hover {
+    background: #eeeb;
+    color: #222e;
+}
+
+.addWorkspaceMenu .content .close {
+    cursor: pointer;
+    position: absolute;
+    width: fit-content;
+    padding: 0.5em;
+    border: none;
+    top: 0;
+    right: 0;
+    color: #eeea;
+    background: #0000;
+    transition: 200ms;
+}
 
 .add_workspace {
     cursor: pointer;
