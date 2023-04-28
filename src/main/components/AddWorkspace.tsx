@@ -17,6 +17,11 @@ interface workspaceTypesInterface {
 
 function workspaceTypes():workspaceTypesInterface {
   let dateNow = new Date()
+  const uniqueId = (() => {
+    return parseInt(dateNow.getDate()+dateNow.getMonth()+""+dateNow.getMinutes()+""+dateNow.getSeconds()).toString(36).toUpperCase()
+  })()
+
+
   return {
     "def" : {
       color: "yellow",
@@ -47,6 +52,16 @@ function workspaceTypes():workspaceTypesInterface {
       color: "green",
       title: `Did on ${dateNow.getDate()}-${dateNow.getMonth()+1}`,
       label: "What happened today"
+    },
+    "inspirationHit" : {
+      color: "purple",
+      title: `Cool idea ${dateNow.getDate()}-${dateNow.getMonth()+1}`,
+      label: "Inspiration hit"
+    },
+    "someList" : {
+      color: "green",
+      title: `My list #${uniqueId}`,
+      label: "List about things"
     },
     "coolIdeas": {
       color: "blue",
