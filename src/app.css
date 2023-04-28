@@ -219,13 +219,13 @@ body {
 .add {
     color: #000a;
     border: none;
-    border: #0005 1px solid;
+    /* border: #0005 1px solid; */
     box-shadow: #0005 2px 4px 4px;
-    background: hsl(370, 37%, 48%);
+    background: hsl(var(--hue), 50%, 61%);
     cursor: pointer;
     position: fixed;
     bottom: 1rem;
-    font-size: 1.25em;
+    font-size: 1.4em;
     height: 2em;
     aspect-ratio: 1 / 1;
     text-align: center;
@@ -236,9 +236,9 @@ body {
 }
 
 .add:hover {
-    color: #eeeb;
-    background: hsl(370, 37%, 53%);
-    box-shadow: #0003 10px 20px 10px;
+    color: #000;
+    /* background: hsl(370, 37%, 53%); */
+    /* box-shadow: #0003 10px 20px 10px; */
 }
 
 .app .header {
@@ -252,7 +252,9 @@ body {
 }
 
 .showWorkspace .header {
-    background: var(--header);
+    /* background: var(--header); */
+    background: #1114;
+    box-shadow: 0 3px 8px #0005;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -288,6 +290,11 @@ body {
     border: none;
     background: var(--bg);
     background: var(--color);
+    background: hsl(var(--hue), 75%,81%);
+    background: transparent;
+    color: inherit;
+    border-radius: 1em;
+    /* padding: 0 1em; */
     font-size: 1.25em;
     flex-shrink: 0;
     width: 1em;
