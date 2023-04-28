@@ -43,6 +43,11 @@ function workspaceTypes():workspaceTypesInterface {
       title: `${dateNow.getDate()}-${dateNow.getMonth()+1} Todos`,
       label: "Today todos"
     },
+    "bugFix" : {
+      color: "yellow",
+      title: `Idea for bug fix`,
+      label: "Inspiration hit"
+    },
     "workoutLog" : {
       color: "red",
       title: `${dateNow.getDate()}-${dateNow.getMonth()+1} Workout`,
