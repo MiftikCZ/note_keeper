@@ -19,7 +19,7 @@ interface PopupFromTopInterface {
 function PopupFromTop({ setTodos, todos, workspace, setAfter }: PopupFromTopInterface) {
     const [value, setValue] = useState<string>("")
     return <>
-        <form class="relative" onSubmit={(e)=>{
+        <form class="relative" onSubmit={(e) => {
             e.preventDefault()
         }}>
             <div class="popup">
@@ -30,15 +30,15 @@ function PopupFromTop({ setTodos, todos, workspace, setAfter }: PopupFromTopInte
                 }} autofocus />
                 <div class="content">
                     <button type="submit" class="button _add" onClick={() => {
-                        if(value) {
+                        if (value) {
 
                             addTodo({ setTodos, todos, workspace }, value)
-                            setAfter(<></>)
+                            setAfter(null)
                         }
                     }}>Add</button>
 
                     <button type="close" class="button close" onClick={() => {
-                        setAfter(<></>)
+                        setAfter(null)
                     }}>Close</button>
                 </div>
             </div>
@@ -67,10 +67,14 @@ function addTodo({ setTodos, todos, workspace }: mainInterface, content: string)
 }
 
 export default function ({ setTodos, todos, workspace }: mainInterface) {
-    const [after, setAfter] = useState<JSX.Element>(<></>)
+    const [after, setAfter] = useState<JSX.Element | null>()
 
-    return <>
+    return after ? <>
         {after}
+        <button class="add" onClick={() => {
+            setAfter(null)
+        }}>-</button>
+    </> : <>
         <button class="add" onClick={() => {
             setAfter(<>
                 <PopupFromTop setAfter={setAfter} setTodos={setTodos} todos={todos} workspace={workspace} />
