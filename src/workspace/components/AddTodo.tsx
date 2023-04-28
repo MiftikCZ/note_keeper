@@ -71,14 +71,14 @@ export default function ({ setTodos, todos, workspace }: mainInterface) {
 
     return after ? <>
         {after}
-        <button class="add" onClick={() => {
+        <button class="add material-symbols-outlined" onClick={() => {
             setAfter(null)
-        }}>-</button>
+        }}>close</button>
     </> : <>
-        <button class="add" onClick={() => {
+        <button class="add material-symbols-outlined" onClick={() => {
             setAfter(<>
                 <PopupFromTop setAfter={setAfter} setTodos={setTodos} todos={todos} workspace={workspace} />
             </>)
-        }}>+</button>
+        }}>add</button>
     </>
 }

@@ -253,8 +253,9 @@ body {
 
 .showWorkspace .header {
     /* background: var(--header); */
-    background: #1114;
-    box-shadow: 0 3px 8px #0005;
+    /* background: #16161ca4; */
+    background: #1d1d23;
+    box-shadow: 0 2px 8px #0008;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
